@@ -18,7 +18,8 @@ def lambda_handler(event, context):
         print(result);
         for row in result:
             print(row)
-        transaction.commit()
+        transaction.commit();
+        return result;
     except Exception as e:
         print(e);
         transaction.rollback()  # Roll back the transaction if an exception occurs
